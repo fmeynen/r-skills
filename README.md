@@ -5,7 +5,7 @@ A collection of skills from Posit!
 Claude Skills extend Claude's capabilities with specialized knowledge and workflows. Skills are automatically activated by Claude based on your task and can be used in Claude.ai, Claude Code, or via the Claude API. Learn more at the [Claude Skills documentation](https://support.claude.com/en/articles/12512180-using-skills-in-claude).
 
 ## GitHub Copilot app
-
+This fork makes it possible to use the skills in the Github Copilot app.
 Install plugins in the GitHub Copilot app using the UI:
 
 1. Open **Customize** > **Plugins**.
