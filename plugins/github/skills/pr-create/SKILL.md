@@ -1,7 +1,7 @@
 ---
 name: pr-create
 description: Creates a pull request from current changes, monitors GitHub CI, and debugs any failures until CI passes. Activate when the user says "create pr", "make a pr", "open pull request", "submit pr", "pr for these changes", or wants to get their current work into a reviewable PR. Assumes the project uses git, is hosted on GitHub, and has GitHub Actions CI with automated checks (lint, build, tests, etc.). Does NOT merge - stops when CI passes and provides the PR link.
-compatibility: Designed for Claude Code; requires TaskCreate, TaskUpdate, and TaskList tools
+compatibility: Requires git, GitHub access, and a task tracker when session recovery is needed.
 metadata:
   author: Garrick Aden-Buie (@gadenbuie)
   version: "1.5"
@@ -14,9 +14,9 @@ Get changes into a PR, monitor CI, fix any failures, and notify the user when th
 
 The user may already have commits ready on a feature branch, or may have uncommitted changes, or both. Adapt the workflow to the current state.
 
-## Task List Integration
+## Progress Tracking
 
-**CRITICAL:** Use Claude Code's task list system for progress tracking and session recovery. Use TaskCreate, TaskUpdate, and TaskList tools throughout execution.
+Use the host's task list or other persistent progress tracker for session recovery when one is available. In the examples below, `TaskCreate`, `TaskUpdate`, and `TaskList` describe the corresponding progress-tracking action. If no tracker is available, maintain the hierarchy as a concise working checklist and report the current item before resuming.
 
 ### Task Hierarchy
 ```
@@ -28,7 +28,7 @@ The user may already have commits ready on a feature branch, or may have uncommi
   └── [CI Task] "CI Run #3" (status: passed)
 ```
 
-**At the start, always call TaskList to check for existing PR tasks.** If a "Create PR" task exists with status in_progress, resume using the Session Recovery section below.
+At the start, inspect the available progress tracker for an in-progress "Create PR" item. If it exists, resume using the Session Recovery section below.
 
 ## Process
 

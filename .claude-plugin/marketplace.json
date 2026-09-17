@@ -15,12 +15,12 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./posit-dev/critical-code-reviewer",
-        "./posit-dev/describe-design",
-        "./posit-dev/implement",
-        "./posit-dev/new-work",
-        "./posit-dev/review-testing",
-        "./posit-dev/working-on"
+        "./plugins/posit-dev/skills/critical-code-reviewer",
+        "./plugins/posit-dev/skills/describe-design",
+        "./plugins/posit-dev/skills/implement",
+        "./plugins/posit-dev/skills/new-work",
+        "./plugins/posit-dev/skills/review-testing",
+        "./plugins/posit-dev/skills/working-on"
       ]
     },
     {
@@ -29,9 +29,9 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./github/pr-create",
-        "./github/pr-threads-address",
-        "./github/pr-threads-resolve"
+        "./plugins/github/skills/pr-create",
+        "./plugins/github/skills/pr-threads-address",
+        "./plugins/github/skills/pr-threads-resolve"
       ]
     },
     {
@@ -40,8 +40,8 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./open-source/release-post",
-        "./open-source/create-release-checklist"
+        "./plugins/open-source/skills/release-post",
+        "./plugins/open-source/skills/create-release-checklist"
       ]
     },
     {
@@ -50,15 +50,15 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./r-lib/testing-r-packages",
-        "./r-lib/cli",
-        "./r-lib/cran-extrachecks",
-        "./r-lib/lifecycle",
-        "./r-lib/r-package-development",
-        "./r-lib/r-cli-app",
-        "./r-lib/mirai",
-        "./alt-text",
-        "./r-lib/r-cran-status"
+        "./plugins/r-lib/skills/testing-r-packages",
+        "./plugins/r-lib/skills/cli",
+        "./plugins/r-lib/skills/cran-extrachecks",
+        "./plugins/r-lib/skills/lifecycle",
+        "./plugins/r-lib/skills/r-package-development",
+        "./plugins/r-lib/skills/r-cli-app",
+        "./plugins/r-lib/skills/mirai",
+        "./plugins/alt-text/skills/alt-text",
+        "./plugins/r-lib/skills/r-cran-status"
       ]
     },
     {
@@ -67,7 +67,7 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./ggsql/ggsql"
+        "./plugins/ggsql/skills/ggsql"
       ]
     },
     {
@@ -76,9 +76,9 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./brand-yml",
-        "./shiny/shiny-bslib",
-        "./shiny/shiny-bslib-theming"
+        "./plugins/brand-yml/skills/brand-yml",
+        "./plugins/shiny/skills/shiny-bslib",
+        "./plugins/shiny/skills/shiny-bslib-theming"
       ]
     },
     {
@@ -87,9 +87,9 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./brand-yml",
-        "./quarto/quarto-authoring",
-        "./alt-text"
+        "./plugins/brand-yml/skills/brand-yml",
+        "./plugins/quarto/skills/quarto-authoring",
+        "./plugins/alt-text/skills/alt-text"
       ]
     },
     {
@@ -98,7 +98,25 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./connect/deploy-to-connect"
+        "./plugins/connect/skills/deploy-to-connect"
+      ]
+    },
+    {
+      "name": "alt-text",
+      "description": "Accessible alt text skills for visualizations and documents",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./plugins/alt-text/skills/alt-text"
+      ]
+    },
+    {
+      "name": "brand-yml",
+      "description": "brand.yml authoring skills for Shiny and Quarto",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./plugins/brand-yml/skills/brand-yml"
       ]
     }
   ]

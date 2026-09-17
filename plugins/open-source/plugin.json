@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "open-source",
+  "version": "1.0.0",
+  "description": "Open-source package maintenance and release skills.",
+  "author": { "name": "Posit PBC" },
+  "repository": "https://github.com/fmeynen/r-skills",
+  "license": "MIT",
+  "keywords": ["open-source", "releases", "r-packages"]
+}

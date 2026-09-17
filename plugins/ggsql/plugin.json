@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ggsql",
+  "version": "1.0.0",
+  "description": "Skills for writing ggsql visualization queries.",
+  "author": { "name": "Posit PBC" },
+  "repository": "https://github.com/fmeynen/r-skills",
+  "license": "MIT",
+  "keywords": ["ggsql", "sql", "visualization"]
+}

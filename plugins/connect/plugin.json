@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "connect",
+  "version": "1.0.0",
+  "description": "Posit Connect deployment skills.",
+  "author": { "name": "Posit PBC" },
+  "repository": "https://github.com/fmeynen/r-skills",
+  "license": "MIT",
+  "keywords": ["posit-connect", "deployment", "r", "python"]
+}

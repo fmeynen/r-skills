@@ -1,0 +1,23 @@
+{
+  "name": "r-skills",
+  "owner": {
+    "name": "Garrick Aden-Buie (Posit, PBC)",
+    "email": "garrick@posit.co"
+  },
+  "metadata": {
+    "description": "Curated R, Shiny, Quarto, and developer workflow skills for GitHub Copilot.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    { "name": "posit-dev", "source": "plugins/posit-dev", "description": "General-purpose developer workflow skills.", "version": "1.0.0" },
+    { "name": "github", "source": "plugins/github", "description": "GitHub pull request workflow skills.", "version": "1.0.0" },
+    { "name": "open-source", "source": "plugins/open-source", "description": "Open-source package maintenance and release skills.", "version": "1.0.0" },
+    { "name": "r-lib", "source": "plugins/r-lib", "description": "R package development skills for the r-lib ecosystem.", "version": "1.0.0" },
+    { "name": "ggsql", "source": "plugins/ggsql", "description": "Skills for writing ggsql visualization queries.", "version": "1.0.0" },
+    { "name": "shiny", "source": "plugins/shiny", "description": "Shiny application development and theming skills.", "version": "1.0.0" },
+    { "name": "quarto", "source": "plugins/quarto", "description": "Quarto document authoring skills.", "version": "1.0.0" },
+    { "name": "connect", "source": "plugins/connect", "description": "Posit Connect deployment skills.", "version": "1.0.0" },
+    { "name": "alt-text", "source": "plugins/alt-text", "description": "Accessible alt text skills for visualizations and documents.", "version": "1.0.0" },
+    { "name": "brand-yml", "source": "plugins/brand-yml", "description": "brand.yml authoring skills for Shiny and Quarto.", "version": "1.0.0" }
+  ]
+}
