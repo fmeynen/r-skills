@@ -1,8 +1,18 @@
-# Posit Claude Skills
+# Posit Skills
 
-A collection of Claude Skills from Posit!
+A collection of skills from Posit!
 
 Claude Skills extend Claude's capabilities with specialized knowledge and workflows. Skills are automatically activated by Claude based on your task and can be used in Claude.ai, Claude Code, or via the Claude API. Learn more at the [Claude Skills documentation](https://support.claude.com/en/articles/12512180-using-skills-in-claude).
+
+## GitHub Copilot app
+
+Install plugins in the GitHub Copilot app using the UI:
+
+1. Open **Customize** > **Plugins**.
+2. Select the marketplace settings gear, then **Add custom marketplace**.
+3. Choose **Git repo/Git URL**, add this repository, and install the plugins you need.
+
+The planned plugin layout is `plugins/<plugin-name>/skills/<skill-name>/`. Available plugins are `posit-dev`, `github`, `open-source`, `r-lib`, `ggsql`, `shiny`, `quarto`, `connect`, `alt-text`, and `brand-yml`.
 
 ## Available Skills
 
@@ -10,67 +20,67 @@ Claude Skills extend Claude's capabilities with specialized knowledge and workfl
 
 General-purpose developer skills useful across any language, project type, or context.
 
-- **[critical-code-reviewer](./posit-dev/critical-code-reviewer/)** - Conduct rigorous, adversarial code reviews identifying security holes, lazy patterns, edge case failures, and bad practices across Python, R, JavaScript/TypeScript, SQL, and front-end code
-- **[describe-design](./posit-dev/describe-design/)** - Research a codebase and create architectural documentation describing how features or systems work, with Mermaid diagrams and stable code references suitable for humans and AI agents
-- **[new-work](./posit-dev/new-work/)** - Create a todo tracking document for a new feature, bug, or task; keeps it updated with decisions, plans, and progress for the rest of the session
-- **[review-testing](./posit-dev/review-testing/)** - Review test code for quality, design, and completeness after implementing a feature or fixing a bug, covering assertion completeness, mocking boundaries, fixture design, test smells, and coverage gaps
-- **[working-on](./posit-dev/working-on/)** - Set an existing tracking document as the source of truth for the current session, keeping it updated with decisions and progress
+- **[critical-code-reviewer](./plugins/posit-dev/skills/critical-code-reviewer/)** - Conduct rigorous, adversarial code reviews identifying security holes, lazy patterns, edge case failures, and bad practices across Python, R, JavaScript/TypeScript, SQL, and front-end code
+- **[describe-design](./plugins/posit-dev/skills/describe-design/)** - Research a codebase and create architectural documentation describing how features or systems work, with Mermaid diagrams and stable code references suitable for humans and AI agents
+- **[new-work](./plugins/posit-dev/skills/new-work/)** - Create a todo tracking document for a new feature, bug, or task; keeps it updated with decisions, plans, and progress for the rest of the session
+- **[review-testing](./plugins/posit-dev/skills/review-testing/)** - Review test code for quality, design, and completeness after implementing a feature or fixing a bug, covering assertion completeness, mocking boundaries, fixture design, test smells, and coverage gaps
+- **[working-on](./plugins/posit-dev/skills/working-on/)** - Set an existing tracking document as the source of truth for the current session, keeping it updated with decisions and progress
 
 
 ### GitHub
 
 Skills for GitHub pull request workflows — creating PRs, addressing review feedback, and resolving threads.
 
-- **[pr-create](./github/pr-create/)** - Creates a pull request from current changes, monitors GitHub CI, and debugs any failures until CI passes
-- **[pr-threads-address](./github/pr-threads-address/)** - Review all unresolved PR review threads, address them by making necessary code changes, and commit the changes appropriately
-- **[pr-threads-resolve](./github/pr-threads-resolve/)** - Bulk resolve unresolved PR review threads
+- **[pr-create](./plugins/github/skills/pr-create/)** - Creates a pull request from current changes, monitors GitHub CI, and debugs any failures until CI passes
+- **[pr-threads-address](./plugins/github/skills/pr-threads-address/)** - Review all unresolved PR review threads, address them by making necessary code changes, and commit the changes appropriately
+- **[pr-threads-resolve](./plugins/github/skills/pr-threads-resolve/)** - Bulk resolve unresolved PR review threads
 
 ### Open Source
 
 Skills for open-source R and Python package developers, streamlining common workflows like releases, changelogs, and contributor acknowledgments.
 
-- **[create-release-checklist](./open-source/create-release-checklist/)** - Create a release checklist and GitHub issue for an R package, with automatic version calculation and customizable checklist generation
-- **[release-post](./open-source/release-post/)** - Create professional package release blog posts following Tidyverse or Shiny blog conventions, with support for both R and Python packages
+- **[create-release-checklist](./plugins/open-source/skills/create-release-checklist/)** - Create a release checklist and GitHub issue for an R package, with automatic version calculation and customizable checklist generation
+- **[release-post](./plugins/open-source/skills/release-post/)** - Create professional package release blog posts following Tidyverse or Shiny blog conventions, with support for both R and Python packages
 
 ### R Package Development
 
 R package development skills for working with the r-lib ecosystem and modern R package workflows.
 
-- **[testing-r-packages](./r-lib/testing-r-packages/)** - Best practices for writing R package tests using testthat 3+, including test structure, expectations, fixtures, snapshots, mocking, and BDD-style testing
-- **[cli](./r-lib/cli/)** - Comprehensive guidance for using the cli R package for command-line interface styling, semantic messaging, and user communication with inline markup, progress indicators, and theming
-- **[cran-extrachecks](./r-lib/cran-extrachecks/)** - Prepare R packages for CRAN submission by checking for common ad-hoc requirements not caught by `devtools::check()`, including documentation standards, DESCRIPTION field formatting, and URL validation
-- **[lifecycle](./r-lib/lifecycle/)** - Manage R package lifecycle according to tidyverse principles using the lifecycle package, covering deprecation workflows, function/argument renaming, superseding, and experimental stages
-- **[r-package-development](./r-lib/r-package-development/)** - R package development with devtools, testthat, and roxygen2, covering key commands, coding conventions, testing, documentation, and NEWS.md practices
-- **[mirai](./r-lib/mirai/)** - Async, parallel, and distributed computing in R using mirai, covering explicit dependency passing, daemon setup, parallel mapping with `mirai_map()`, Shiny integration, remote/HPC launchers, and migration from future/parallel
-- **[alt-text](./alt-text/)** - Generate and improve accessible alt text for data visualizations and images in pkgdown sites and Quarto documents, covering vignette code chunks (`fig.alt`), static markdown images, and multi-plot chunks
+- **[testing-r-packages](./plugins/r-lib/skills/testing-r-packages/)** - Best practices for writing R package tests using testthat 3+, including test structure, expectations, fixtures, snapshots, mocking, and BDD-style testing
+- **[cli](./plugins/r-lib/skills/cli/)** - Comprehensive guidance for using the cli R package for command-line interface styling, semantic messaging, and user communication with inline markup, progress indicators, and theming
+- **[cran-extrachecks](./plugins/r-lib/skills/cran-extrachecks/)** - Prepare R packages for CRAN submission by checking for common ad-hoc requirements not caught by `devtools::check()`, including documentation standards, DESCRIPTION field formatting, and URL validation
+- **[lifecycle](./plugins/r-lib/skills/lifecycle/)** - Manage R package lifecycle according to tidyverse principles using the lifecycle package, covering deprecation workflows, function/argument renaming, superseding, and experimental stages
+- **[r-package-development](./plugins/r-lib/skills/r-package-development/)** - R package development with devtools, testthat, and roxygen2, covering key commands, coding conventions, testing, documentation, and NEWS.md practices
+- **[mirai](./plugins/r-lib/skills/mirai/)** - Async, parallel, and distributed computing in R using mirai, covering explicit dependency passing, daemon setup, parallel mapping with `mirai_map()`, Shiny integration, remote/HPC launchers, and migration from future/parallel
+- **[alt-text](./plugins/alt-text/skills/alt-text/)** - Generate and improve accessible alt text for data visualizations and images in pkgdown sites and Quarto documents, covering vignette code chunks (`fig.alt`), static markdown images, and multi-plot chunks
 
 ### ggsql
 
 Skills for writing ggsql queries — a grammar of graphics for SQL.
 
-- **[ggsql](./ggsql/ggsql/)** - Write ggsql queries — a grammar of graphics for SQL. Use when the user wants to create, modify, or understand a ggsql visualization query
+- **[ggsql](./plugins/ggsql/skills/ggsql/)** - Write ggsql queries — a grammar of graphics for SQL. Use when the user wants to create, modify, or understand a ggsql visualization query
 
 ### Shiny
 
 Skills for Shiny app development in both R and Python.
 
-- **[brand-yml](./brand-yml/)** - Create and apply brand.yml files for consistent styling across Shiny apps, with support for bslib (R) and ui.Theme (Python), including automatic brand discovery and theming functions for plots and tables
-- **[shiny-bslib](./shiny/shiny-bslib/)** - Build modern Shiny dashboards using bslib with Bootstrap 5 layouts, cards, value boxes, navigation, theming, and modern inputs. Includes migration guide from legacy Shiny patterns
-- **[shiny-bslib-theming](./shiny/shiny-bslib-theming/)** - Comprehensive theming for Shiny apps using bslib, covering bs_theme(), Bootswatch themes, custom colors, typography, Bootstrap Sass variables, custom Sass/CSS rules, dark mode, dynamic theming, and R plot theming
+- **[brand-yml](./plugins/brand-yml/skills/brand-yml/)** - Create and apply brand.yml files for consistent styling across Shiny apps, with support for bslib (R) and ui.Theme (Python), including automatic brand discovery and theming functions for plots and tables
+- **[shiny-bslib](./plugins/shiny/skills/shiny-bslib/)** - Build modern Shiny dashboards using bslib with Bootstrap 5 layouts, cards, value boxes, navigation, theming, and modern inputs. Includes migration guide from legacy Shiny patterns
+- **[shiny-bslib-theming](./plugins/shiny/skills/shiny-bslib-theming/)** - Comprehensive theming for Shiny apps using bslib, covering bs_theme(), Bootswatch themes, custom colors, typography, Bootstrap Sass variables, custom Sass/CSS rules, dark mode, dynamic theming, and R plot theming
 
 ### Quarto
 
 Skills for Quarto document creation and publishing.
 
-- **[brand-yml](./brand-yml/)** - Create and apply brand.yml files for consistent styling across Quarto projects, supporting HTML documents, dashboards, RevealJS presentations, Typst PDFs, and websites with automatic brand discovery and theme layering
-- **[authoring](quarto/README.md#quarto-authoring-skill)** - Comprehensive guidance for Quarto document authoring and R Markdown migration. Write new Quarto documents with best practices, convert R Markdown files, migrate bookdown/blogdown/xaringan/distill projects, and use Quarto-specific features like hashpipe syntax, cross-references, callouts, and extensions
-- **[alt-text](./alt-text/)** - Generate and improve accessible alt text for figures in Quarto documents using Amy Cesal's three-part formula (chart type, data description, key insight). Supports code-generated plots and static images
+- **[brand-yml](./plugins/brand-yml/skills/brand-yml/)** - Create and apply brand.yml files for consistent styling across Quarto projects, supporting HTML documents, dashboards, RevealJS presentations, Typst PDFs, and websites with automatic brand discovery and theme layering
+- **[authoring](./plugins/quarto/skills/quarto-authoring/)** - Comprehensive guidance for Quarto document authoring and R Markdown migration. Write new Quarto documents with best practices, convert R Markdown files, migrate bookdown/blogdown/xaringan/distill projects, and use Quarto-specific features like hashpipe syntax, cross-references, callouts, and extensions
+- **[alt-text](./plugins/alt-text/skills/alt-text/)** - Generate and improve accessible alt text for figures in Quarto documents using Amy Cesal's three-part formula (chart type, data description, key insight). Supports code-generated plots and static images
 
 ### Connect
 
 Skills for deploying and managing content on Posit Connect.
 
-- **[deploy-to-connect](./connect/deploy-to-connect/)** - Deploy or publish Python and R content to a Posit Connect server using rsconnect-python or the R rsconnect package. Covers interactive apps and dashboards, web APIs, rendered documents, and prepared bundles/manifests
+- **[deploy-to-connect](./plugins/connect/skills/deploy-to-connect/)** - Deploy or publish Python and R content to a Posit Connect server using rsconnect-python or the R rsconnect package. Covers interactive apps and dashboards, web APIs, rendered documents, and prepared bundles/manifests
 
 ## Installation
 
@@ -135,12 +145,12 @@ For customization or offline use:
 2. Copy individual skills to your Claude Code skills directory:
 
    ```bash
-   cp -r open-source/release-post ~/.config/claude-code/skills/
+   cp -r plugins/open-source/skills/release-post ~/.config/claude-code/skills/
    ```
 
 3. Or install all skills from a category:
    ```bash
-   for skill in open-source/*/; do
+   for skill in plugins/open-source/skills/*/; do
      cp -r "$skill" ~/.config/claude-code/skills/
    done
    ```

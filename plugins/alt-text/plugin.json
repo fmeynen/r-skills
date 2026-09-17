@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "alt-text",
+  "version": "1.0.0",
+  "description": "Accessible alt text skills for visualizations and documents.",
+  "author": { "name": "Posit PBC" },
+  "repository": "https://github.com/fmeynen/r-skills",
+  "license": "MIT",
+  "keywords": ["accessibility", "alt-text", "quarto", "pkgdown"]
+}

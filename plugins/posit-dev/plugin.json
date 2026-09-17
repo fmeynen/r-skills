@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "posit-dev",
+  "version": "1.0.0",
+  "description": "General-purpose developer workflow skills.",
+  "author": { "name": "Posit PBC" },
+  "repository": "https://github.com/fmeynen/r-skills",
+  "license": "MIT",
+  "keywords": ["development", "planning", "review"]
+}

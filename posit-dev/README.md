@@ -4,12 +4,12 @@ General-purpose developer skills useful across any language, project type, or co
 
 ## Skills
 
-- **[critical-code-reviewer](./critical-code-reviewer/)** - Rigorous, adversarial code review across Python, R, JavaScript/TypeScript, SQL, and front-end code
-- **[review-testing](./review-testing/)** - Review test code for quality, design, and completeness after implementing a feature or fixing a bug, covering assertion completeness, mocking boundaries, fixture design, test smells, and coverage gaps
-- **[describe-design](./describe-design/)** - Research a codebase and create architectural documentation with Mermaid diagrams
-- **[implement](./implement/)** - Orchestrates implementation of a plan file by delegating work to subagents in parallel
-- **[new-work](./new-work/)** - Create a todo tracking document for a new feature, bug, or task; keeps it updated with decisions, plans, and progress for the rest of the session
-- **[working-on](./working-on/)** - Sets an existing tracking document as the source of truth for the current session, keeping it updated with decisions and progress
+- **[critical-code-reviewer](../plugins/posit-dev/skills/critical-code-reviewer/)** - Rigorous, adversarial code review across Python, R, JavaScript/TypeScript, SQL, and front-end code
+- **[review-testing](../plugins/posit-dev/skills/review-testing/)** - Review test code for quality, design, and completeness after implementing a feature or fixing a bug, covering assertion completeness, mocking boundaries, fixture design, test smells, and coverage gaps
+- **[describe-design](../plugins/posit-dev/skills/describe-design/)** - Research a codebase and create architectural documentation with Mermaid diagrams
+- **[implement](../plugins/posit-dev/skills/implement/)** - Orchestrates implementation of a plan file by delegating work to subagents in parallel
+- **[new-work](../plugins/posit-dev/skills/new-work/)** - Create a todo tracking document for a new feature, bug, or task; keeps it updated with decisions, plans, and progress for the rest of the session
+- **[working-on](../plugins/posit-dev/skills/working-on/)** - Sets an existing tracking document as the source of truth for the current session, keeping it updated with decisions and progress
 
 ## Work Tracking Lifecycle
 

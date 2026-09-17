@@ -22,6 +22,10 @@ Determine which category your skill belongs to:
 | **shiny** | Shiny app development and deployment |
 | **quarto** | Quarto document creation and publishing |
 | **connect** | Posit Connect deployment and management |
+| **ggsql** | ggsql query writing — a grammar of graphics for SQL |
+| **github** | GitHub pull request workflows |
+| **alt-text** | Accessible image and visualization descriptions |
+| **brand-yml** | Shared Shiny and Quarto branding |
 
 Other ideas for categories include:
 
@@ -36,16 +40,18 @@ Feel free to propose new categories if needed.
 Each skill should follow this structure:
 
 ```
-category-name/
-└── your-skill-name/
-    ├── SKILL.md              # Required: Main skill file
-    ├── references/           # Optional: Supporting documentation
-    │   └── guide.md
-    ├── scripts/              # Optional: Helper scripts
-    │   ├── helper.sh
-    │   └── use_package.R
-    └── templates/            # Optional: Document templates
-        └── template.md
+plugins/
+└── plugin-name/
+    └── skills/
+        └── your-skill-name/
+            ├── SKILL.md              # Required: Main skill file
+            ├── references/           # Optional: Supporting documentation
+            │   └── guide.md
+            ├── scripts/              # Optional: Helper scripts
+            │   ├── helper.sh
+            │   └── use_package.R
+            └── templates/            # Optional: Document templates
+                └── template.md
 ```
 
 **Note**: Do NOT create a README.md within individual skill directories. Documentation about skill organization, design principles, or resources should go in the skill category's README.md (e.g., `open-source/README.md`).
@@ -177,8 +183,8 @@ cd skills
 ### 2. Create Your Skill Directory
 
 ```bash
-mkdir -p category-name/your-skill-name
-cd category-name/your-skill-name
+mkdir -p plugins/plugin-name/skills/your-skill-name
+cd plugins/plugin-name/skills/your-skill-name
 ```
 
 ### 3. Add Your Skill Files
@@ -198,8 +204,8 @@ Skills are organized by category plugins. Find the plugin that matches your skil
   "source": "./",
   "strict": false,
   "skills": [
-    "./existing-category/existing-skill",
-    "./your-category/your-skill-name"  // Add your skill here
+    "./plugins/existing-category/skills/existing-skill",
+    "./plugins/your-category/skills/your-skill-name"  // Add your skill here
   ]
 }
 ```
@@ -213,8 +219,8 @@ Skills are organized by category plugins. Find the plugin that matches your skil
   "source": "./",
   "strict": false,
   "skills": [
-    "./open-source/release-post",
-    "./open-source/your-new-skill"  // Your new skill
+    "./plugins/open-source/skills/release-post",
+    "./plugins/open-source/skills/your-new-skill"  // Your new skill
   ]
 }
 ```
@@ -228,7 +234,7 @@ Skills are organized by category plugins. Find the plugin that matches your skil
   "source": "./",
   "strict": false,
   "skills": [
-    "./your-category/your-skill-name"
+    "./plugins/your-category/skills/your-skill-name"
   ]
 }
 ```
@@ -254,7 +260,7 @@ Brief description of what skills in this category do.
 
 Brief notes about individual skills (optional - only document when needed):
 
-- **[skill-name](./skill-name/)** - Organization notes, design principles, or key resources
+- **skill-name** - Organization notes, design principles, or key resources
 
 ## Common Use Cases
 
@@ -268,7 +274,7 @@ Before submitting:
 
 1. **Install locally**:
    ```bash
-   cp -r category-name/your-skill-name ~/.config/claude-code/skills/
+   cp -r plugins/plugin-name/skills/your-skill-name ~/.config/claude-code/skills/
    ```
 
 2. **Test with Claude Code**: Verify Claude activates your skill appropriately
@@ -279,9 +285,9 @@ Before submitting:
 
 5. **Check token counts**: Run the token counter and review the output for warnings:
    ```bash
-   ./count-skill-tokens.py category-name/your-skill-name
+   ./count-skill-tokens.py plugins/plugin-name/skills/your-skill-name
    # or
-   uv run count-skill-tokens.py category-name/your-skill-name
+   uv run count-skill-tokens.py plugins/plugin-name/skills/your-skill-name
    ```
    The script warns if `SKILL.md` exceeds **5,000 tokens / 500 lines**, or if the `description` frontmatter exceeds **100 tokens**. Address any warnings before submitting. Save the output — you'll include it in your PR.
 
@@ -333,4 +339,3 @@ If you have questions about contributing:
 - [Creating Custom Skills Guide](https://support.claude.com/en/articles/12512198-creating-custom-skills)
 - [Anthropic's skill-creator](https://github.com/anthropics/skills)
 - [Skills API Documentation](https://docs.claude.com/en/api/skills-guide)
-

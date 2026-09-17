@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repository Is
 
-A collection of Claude Skills published by Posit PBC. Skills are structured markdown files that teach Claude specialized workflows (e.g., Shiny app development, R package testing, GitHub PR workflows). There is no application code to build, compile, or deploy — the primary artifacts are Markdown files consumed directly by Claude's skill system.
+A collection of skills published by Posit PBC for the GitHub Copilot app and Claude Code. Skills are structured markdown files that teach specialized workflows (e.g., Shiny app development, R package testing, GitHub PR workflows). There is no application code to build, compile, or deploy — the primary artifacts are Markdown files consumed directly by agent skill systems.
 
 ## Utility Script
 
@@ -12,9 +12,9 @@ The only runnable utility is `count-skill-tokens.py`, which reports line and tok
 
 ```bash
 # Requires uv
-./count-skill-tokens.py shiny/shiny-bslib
+./count-skill-tokens.py plugins/shiny/skills/shiny-bslib
 # or
-uv run count-skill-tokens.py r-lib/cli
+uv run count-skill-tokens.py plugins/r-lib/skills/cli
 ```
 
 Warns when `SKILL.md` exceeds **5,000 tokens / 500 lines**, or when the skill `description` frontmatter exceeds **100 tokens**.
@@ -22,17 +22,18 @@ Warns when `SKILL.md` exceeds **5,000 tokens / 500 lines**, or when the skill `d
 ## Directory Structure
 
 ```
-<category>/
-  README.md                   # Category-level notes (optional per skill)
-  <skill-name>/
-    SKILL.md                  # Required: skill definition with YAML frontmatter
-    references/               # Optional: supplementary docs loaded on demand
-      *.md
-    scripts/                  # Optional: R or shell helpers
-    templates/                # Optional: document templates
+plugins/
+  <plugin-name>/
+    skills/
+      <skill-name>/
+        SKILL.md              # Required: skill definition with YAML frontmatter
+        references/           # Optional: supplementary docs loaded on demand
+          *.md
+        scripts/              # Optional: R or shell helpers
+        templates/            # Optional: document templates
 ```
 
-Do **not** create a `README.md` inside individual skill directories — documentation about a skill's design goes in the category README.
+Do **not** create a `README.md` inside individual skill directories — documentation about a skill's design goes in the category README. GitHub Copilot app plugins are standalone; Claude Code retains its category-based marketplace semantics.
 
 ## SKILL.md Format
 
@@ -57,31 +58,33 @@ After creating the skill directory, add it to the appropriate plugin in `.claude
 {
   "name": "open-source",
   "skills": [
-    "./open-source/release-post",
-    "./open-source/your-new-skill"   ← add here
+    "./plugins/open-source/skills/release-post",
+    "./plugins/open-source/skills/your-new-skill"   ← add here
   ]
 }
 ```
 
-If a skill spans multiple categories (like `brand-yml` for both Shiny and Quarto), add its path to multiple plugin `skills` arrays. The `source` field is always `"./"` (repo root).
+If a skill spans multiple Claude Code categories, add its plugin path to each relevant category's `skills` array. The `source` field is always `"./"` (repo root).
 
-When adding a new plugin to `marketplace.json`, also update the root `README.md` "Method 2: Direct Installation" section so it lists the `/plugin install` command for every plugin. All plugins in `marketplace.json` must have a corresponding install line in the README.
+When adding a plugin, update the root README's GitHub Copilot app marketplace list and preserve the Claude Code category installation guidance.
 
 ## Skill Categories
 
 | Category | Purpose |
 |----------|---------|
-| `posit-dev/` | General developer skills (code review, architecture docs) |
-| `github/` | PR creation and review thread workflows |
-| `open-source/` | R/Python package release and changelog workflows |
-| `r-lib/` | R package development with the r-lib ecosystem |
-| `shiny/` | Shiny app development |
-| `quarto/` | Quarto document authoring |
-| `connect/` | Deploying and managing content on Posit Connect |
-| `brand-yml/` | Shared skill registered under both `shiny` and `quarto` plugins |
+| `plugins/posit-dev/` | General developer skills (code review, architecture docs) |
+| `plugins/github/` | PR creation and review thread workflows |
+| `plugins/open-source/` | R/Python package release and changelog workflows |
+| `plugins/r-lib/` | R package development with the r-lib ecosystem |
+| `plugins/ggsql/` | ggsql query writing |
+| `plugins/shiny/` | Shiny app development |
+| `plugins/quarto/` | Quarto document authoring |
+| `plugins/connect/` | Deploying and managing content on Posit Connect |
+| `plugins/alt-text/` | Accessible image and visualization descriptions |
+| `plugins/brand-yml/` | Shared Shiny and Quarto branding |
 
 ## Key Conventions
 
 - **Progressive disclosure**: Put specialized or large reference content in `references/*.md` and instruct Claude to read those files only when needed. This keeps the main `SKILL.md` within token limits.
 - **R scripts**: Use a shebang (`#!/usr/bin/env Rscript`), include inline usage docs, check for required packages at startup, and exit non-zero on error.
-- **Testing**: Install locally via `cp -r <category>/<skill> ~/.config/claude-code/skills/` and verify Claude activates the skill in Claude Code.
+- **Testing**: Install locally via `cp -r plugins/<plugin-name>/skills/<skill-name> ~/.config/claude-code/skills/` and verify Claude activates the skill in Claude Code.
